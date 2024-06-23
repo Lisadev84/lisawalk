@@ -30,7 +30,7 @@ if (isset($_GET["id_w"])) {
 
 if ( isset($_POST["pseudo"],$_POST["comment"]) && !empty($_POST["pseudo"]) && !empty($_POST["comment"])){
     /**
-    * Protection des données des injections XSS
+    * Protection des données contre les injections XSS
     */
     $pseudo = htmlspecialchars($_POST["pseudo"]);
     $comment = htmlspecialchars_decode($_POST["comment"]);
@@ -54,7 +54,7 @@ if ( isset($_POST["pseudo"],$_POST["comment"]) && !empty($_POST["pseudo"]) && !e
     $department= $walk->getDepartment(); 
 
    
-    // Rediriger l'utilisateur en fonction du numéro du département
+    // Redirige l'utilisateur en fonction du numéro du département
     switch ($department)  {
         case 1:
         header("Location: vaucluse.php");

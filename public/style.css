@@ -886,7 +886,7 @@ main {
   .card {
     width: 400px;
     height: 600px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
   }
   .card-body {
     display: flex;

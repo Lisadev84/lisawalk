@@ -83,7 +83,7 @@ $RECYCLE.BIN/
 
 # Fichiers de configuration et les répertoires spécifiques à l'environnement
 .env/
-
+.well-known
 # Fichiers de log
 *.log
 

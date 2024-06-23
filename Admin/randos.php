@@ -77,14 +77,12 @@ include_once "../includes/header.php";
                         <td><?= $walk->geom ?></td>
                         <td><?= $walk->images ?></td>
                         <td>
-                        <!-- on ajoute l'attribut id_w=</?= $walk->id_w ?> à la valeur de l'attribut href du lien pour insérer la valeur de l'identifiant de la randonnée dans l'URL du lien. -->
-
-                        <a 
-                        href="update-rando.php?id_w=<?= $walk->id_w ?>"><img src="../images/edit.svg" alt="stylo">
-                        </a>
+                            <a 
+                                href="update-rando.php?id_w=<?= $walk->id_w ?>"><img src="../images/edit.svg" alt="stylo">
+                            </a>
                             <a onclick="return confirm('Etes-vous sûr de vouloir supprimer cette randonnée ?')" 
-                            href="delete-rando.php?id_w=<?=$walk->id_w ?>"><img src="../images/trash.svg" alt="corbeille"> 
-                        </a>
+                                href="delete-rando.php?id_w=<?=$walk->id_w ?>"><img src="../images/trash.svg" alt="corbeille"> 
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

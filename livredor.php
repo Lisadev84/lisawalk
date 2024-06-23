@@ -14,7 +14,7 @@ if ((!empty($_POST))) {
         isset($_POST["pseudo"], ($_POST["message"])) && !empty($_POST["pseudo"]) && !empty($_POST["message"])
     ) {
         /**
-         * Protection des données des injections XSS
+         * Protection des données contre les injections XSS
          */
         $pseudo = htmlspecialchars($_POST["pseudo"]);
         $note = htmlspecialchars($_POST["message"]);

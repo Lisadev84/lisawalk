@@ -4,8 +4,6 @@ namespace App\Admin;
 use App\Autoloader;
 use App\Models\CommentsModel;
 
-// ini_set('display_errors', 1);
-// error_reporting(E_ALL);
 session_start();
    if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'role_admin'){
    }else{
