@@ -2,6 +2,9 @@
 # Project Title 
 Lisawalk
 
+## Logo
+![logo de Lisawalk](images/LisaWalk.png)
+
 ## Description
  Lisawalk is a web application that allows users to consult hikes, maps and itineraries. Users can download GPX tracks, save hikes consulted on their profile page (to do, completed), leave comments on hikes and write messages in a guest book.
 
