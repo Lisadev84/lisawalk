@@ -14,14 +14,14 @@ $db = Db::getInstance();
 $userId = $_SESSION['user']['id'];
 
 
-$sql = "SELECT walks.*, status.status FROM walks 
+$sql = "SELECT walks.*, status.status, status.created_at FROM walks 
         JOIN status ON walks.id_w = status.walk_id
         WHERE status.user_id = :userId AND status.status = 'must-do'";
 $query = $db->prepare($sql);
 $query->execute(['userId' => $userId]);
 $mustDoWalks = $query->fetchAll();
 
-$sql = "SELECT walks.*, status.status FROM walks 
+$sql = "SELECT walks.*, status.status, status.created_at FROM walks 
         JOIN status ON walks.id_w = status.walk_id
         WHERE status.user_id = :userId AND status.status = 'realized'";
 $query = $db->prepare($sql);
@@ -49,6 +49,7 @@ include "includes/header.php";
             <?php foreach ($mustDoWalks as $walk) : ?>
                 <li>
                     <a href="walkTemplate.php?id_w=<?= $walk->id_w ?>"><?= htmlspecialchars($walk->entitled) ?></a>
+                    <span>(Ajoutée le <?= date('d/m/Y', strtotime($walk->created_at)) ?>)</span>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -60,6 +61,7 @@ include "includes/header.php";
             <?php foreach ($realizedWalks as $walk) : ?>
                 <li>
                     <a href="walkTemplate.php?id_w=<?= $walk->id_w ?>"><?= htmlspecialchars($walk->entitled) ?></a>
+                    <span>(Réalisée le <?= date('d/m/Y', strtotime($walk->created_at)) ?>)</span>
                 </li>
             <?php endforeach; ?>
         </ul>

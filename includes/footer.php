@@ -1,7 +1,7 @@
 <footer>
     <div class="info">
        
-        <a href="./ML.php">Mentions légales et Conditions Générales d'Utilisation</a>
+        <a href="./ml.php">Mentions légales et Conditions Générales d'Utilisation</a>
 
     </div>
 

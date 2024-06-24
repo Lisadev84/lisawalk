@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result) {
       echo "La randonnée a été ajoutée dans votre page profil";
       header("Location:profil.php");
+      exit();
     } else {
       echo "Une erreur est survenue";
     }

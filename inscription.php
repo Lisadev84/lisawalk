@@ -138,7 +138,7 @@ include_once "includes/header.php";
         </div>
 
         <div class="form-group">
-            <label for="consent">Consentement</label>
+            <label for="consent"></label>
             <div>
                 <input type="checkbox" name="consent" id="consent" required>
                 <label for="consent">J'accepte les <a href="ml.php" target="_blank">conditions générales d'utilisation et politique de confidentialité</a></label>

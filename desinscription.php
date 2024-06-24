@@ -30,6 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $query = $db->prepare($sql);
         $query->execute([$user_id]);
         
+         // Supprime les enregistrements associés dans la table comments
+         $sql = "DELETE FROM comments WHERE id = ?";
+         $query = $db->prepare($sql);
+         $query->execute([$user_id]);
+
+          // Supprime les enregistrements associés dans la table messages
+        $sql = "DELETE FROM messages WHERE pseudo = ?";
+        $query = $db->prepare($sql);
+        $query->execute([$user_id]);
+        
         // Supprime l'utilisateur de la table users
         $sql = "DELETE FROM users WHERE id = ?";
         $query = $db->prepare($sql);
