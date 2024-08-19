@@ -8,12 +8,10 @@
     <div class="icons">
         <a href="./contact.php"><img src="../images/envelope-at-fill.svg" alt="envelop"></a>
         <a href="#"><img src="../images/facebook-with-circle.svg" alt="icon facebook"></a>
-        <a href="#"><img src="../images/instagram.svg" alt="incon instagram"></a>
-        <a href="#"><img src="../images/twitter.svg" alt="icon twitter"></a>
     </div>
 
     <div>
-        <p>&copy; 2023 LisaWalk</p>
+        <p>&copy; <?php echo date("Y"); ?> LisaWalk</p>
     </div>
 
 </footer>

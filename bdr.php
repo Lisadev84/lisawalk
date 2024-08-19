@@ -22,7 +22,7 @@ include_once "includes/header.php";
 
 <main class="department">
 
-    <h1>Randonnées dans les Bouches-du-Rhône</h1>
+    <h1>Randonnées Bouches-du-Rhône  </h1>
     <div class="row row-cols-1 row-cols-sm-4 g-4">
         <?php foreach ($walks as $walk) : ?>
             <?php

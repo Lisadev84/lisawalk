@@ -17,6 +17,7 @@ class StatusModel extends Model
   protected $status;
   protected $user_id;
   protected $walk_id;
+  protected $created_at;
 
   public function __construct()
   {
@@ -112,6 +113,24 @@ class StatusModel extends Model
   public function setWalkId($walk_id): self
   {
     $this->walk_id = $walk_id;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of created_at
+   */
+  public function getCreatedAt()
+  {
+    return $this->created_at;
+  }
+
+  /**
+   * Set the value of created_at
+   */
+  public function setCreatedAt($created_at): self
+  {
+    $this->created_at = $created_at;
 
     return $this;
   }

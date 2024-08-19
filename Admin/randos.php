@@ -30,14 +30,14 @@ include_once "../includes/header.php";
   
     <section class="selection">
         <div class="add">
-            <a href="ajoutrando.php" class="btn btn-warning">Ajouter une randonnée</a>
-            <a href="admin.php" class="btn btn-warning">Menu Administration</a>
-            <a href="../index.php" class="btn btn-warning">Accueil du site</a> 
+            <a href="ajoutrando.php" class="btn btn-warning">Ajouter</a>
+            <a href="admin.php" class="btn btn-warning">Menu Admin</a>
+            <a href="../index.php" class="btn btn-warning">Accueil</a> 
         </div>
     </section>
 
     <section class= "listing">
-        <div class="table-responsive">
+        <div class="table-responsive-xl">
             <table class="table-striped">
                 <thead class="thead-light align-center">
                     <tr>

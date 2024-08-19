@@ -34,11 +34,71 @@ include_once "includes/header.php";
     <?php
     $id_w = $walk->id_w;
     $comments = $db->query("SELECT * FROM `comments` WHERE `id_w` = $id_w")->fetchAll();
+
+    $departmentMap = [
+      1 => 'vaucluse.php',
+      2 => 'gard.php',
+      3 => 'drome.php',
+      4 => 'bdr.php',
+      5 => 'france.php'
+    ];
+
+    if (isset($departmentMap[$walk->department])) {
+      $departmentFile = $departmentMap[$walk->department];
+    } 
     ?>
+
+    <div>
+      <button class="go-back">
+          <a href="<?= $departmentFile ?>?id_w=<?= $walk->id_w ?>">Retour</a>
+      </button>
+    </div>
+
     <div class="description">
       <h2><a id="<?= urlencode($walk->entitled) ?>"></a><?= $walk->entitled ?></h2>
 
       <h3>Intérêt de la randonnée</h3>
+
+      <div class="table-responsive-xl">
+                            <table class=" table table-bordered border-black table ">
+                                <thead class="thead-light align-center">
+                                    <tr>
+                                        <th scope="col"><img src="images/distance-outline.svg" alt="icone distance"></th>
+                                        <th scope="col"><img src="images/altitude-outline-rounded.svg" alt="icone denivelé positif"></th>
+                                        <th scope="col"><img src="images/slope-downhill.svg" alt="icone dénivelé négatif"></th>
+                                        <th scope="col"><img src="images/clock-hour-8.svg" alt="icone durée"></th>
+                                        <th scope="col"><img src="images/skill-level.svg" alt="icone level"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><?= $walk->distance ?>kms</td>
+                                        <td><?= $walk->dplus ?>m</td>
+                                        <td><?= $walk->dmoins ?>m</td>
+                                        <td><?= $walk->duration ?></td>
+                                        <td><?= htmlspecialchars($walk->level) ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-responsive-xl">
+                            <table class=" table table-bordered border-black table ">
+                                <thead class="thead-light align-center">
+                                    <tr>
+                                        <th scope="col"><img src="images/icostart.png" alt="icone depart"></th>
+                                        <th scope="col"><img src="images/icoend.png" alt="icone arrivée"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><?= htmlspecialchars($walk->start) ?></td>
+                                        <td><?= htmlspecialchars($walk->arrival) ?></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
       <p><?= nl2br(htmlspecialchars_decode($walk->description)) ?></p>
 
       <h3>Tracé de la randonnée</h3>

@@ -96,24 +96,30 @@ th {
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  margin:0;
+}
+
 body {
-  background-color: #787e7a;
+  background-color: white;
   display: flex;
   height: 100%;
-  margin: 10px;
+  margin: 0;
   flex-direction: column;
+}
+
+main { 
+  margin: 15px;;
 }
 
 header {
   display: flex;
-  height: auto;
   background-color: #65a78e;
-  border: solid 1px black;
-  margin-bottom: 10px;
 }
 
-#logo {
-  width: auto;
+#logo img {
+  max-width: 200px;
   height: auto;
 }
 
@@ -175,9 +181,7 @@ nav > ul li:hover .down {
 }
 
 section {
-  background-color: #d9d9d9;
   width: auto;
-  padding: 10px;
 }
 
 h1 {
@@ -190,12 +194,11 @@ h1 {
   color: #000;
   padding-top: 20px;
   padding-bottom: 20px;
-  text-shadow: 2px 2px #65a78e;
 }
 
 h2 {
   border: 2px solid;
-  box-shadow: 0 4px #787E7A;
+  box-shadow: 0 1px #787e7a;
   font-family: "Luthier", serif;
   font-size: 20px;
   font-weight: bold;
@@ -205,10 +208,8 @@ h2 {
 }
 
 article {
-  margin-top: 15px;
   position: relative;
   text-align: justify;
-  border: solid 1px black;
 }
 
 article::before {
@@ -239,10 +240,9 @@ article p {
 }
 
 .action img {
-  width: 390px;
+  width: 350px;
   height: auto;
   border-radius: 30px;
-  margin: 72px 10px 15px 10px;
 }
 
 .action {
@@ -281,18 +281,15 @@ button {
 
 aside {
   width: auto;
-  background-color: #d9d9d9;
   margin-top: 30px;
   padding-bottom: 10px;
-  border: solid 1px black;
-  padding: 15px;
+  text-align: center;
 }
 
 aside h2 {
   font-family: "Luthier Bd";
   font-size: 20px;
   text-transform: uppercase;
-  text-align: center;
   margin: 10px;
 }
 
@@ -309,7 +306,6 @@ aside a {
   color: #65a78e;
   text-decoration: none;
   padding-left: 20px;
-  text-align: justify;
 }
 
 aside a:hover {
@@ -319,11 +315,9 @@ aside a:hover {
 
 footer {
   background-color: #65a78e;
-  margin-top: 15px;
   font-family: "EB Garamond", serif;
   font-size: 16px;
   color: #d9d9d9;
-  border: solid 1px black;
 }
 
 footer a {
@@ -344,8 +338,8 @@ footer img {
 }
 
 .info {
-padding-top: 10px;  
-text-align: center; 
+  padding-top: 10px;
+  text-align: center;
 }
 
 .icons {
@@ -360,7 +354,7 @@ footer p {
 
 h3 {
   font-family: "Luthier Bd";
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   padding: 60px;
 }
@@ -373,10 +367,10 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #65a78e;
 }
 .inscription a {
-  color: #d9d9d9;
+  color: #65a78e;
+  font-weight: 700;
 }
 .submit {
   text-align: center;
@@ -452,13 +446,16 @@ h3 {
 }
 
 .card {
-  border: 4px solid #65a78e;
+  border: 3px solid #65a78e;
   border-radius: 2%;
+  padding-bottom: 5px;
 }
 
 .card-img-top {
-  border: 2px solid #787e7a;
   height: 240px;
+  width: 100%;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 .card-title {
@@ -467,12 +464,10 @@ h3 {
 }
 
 .department h1 {
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Luthier Bd";
   text-align: center;
-  color: #d9d9d9;
-  text-shadow: none;
-  box-shadow: none;
+  color: #495057;
   margin-bottom: 15px;
 }
 
@@ -491,10 +486,8 @@ h3 {
   font-size: 18px;
   font-family: "Luthier Bd";
   text-transform: capitalize;
-  text-shadow: 1px 1px #65a78e;
   text-align: center;
   padding-top: 30px;
-  padding-left: 15px;
   padding-bottom: 30px;
   color: #000;
   box-shadow: none;
@@ -534,6 +527,19 @@ thead img {
   max-width: 30px;
 }
 
+.go-back {
+  border-radius: 5%;
+  background-color: #787e7a;
+  font-weight: bold;
+  margin: 10px;
+  border: none;
+}
+
+.go-back a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .status {
   display: flex;
   flex-flow: nowrap;
@@ -551,16 +557,36 @@ thead img {
   color: #787e7a;
   font-weight: bold;
 }
-.status form {
-  display: flex;
-  justify-content: last baseline;
-  flex-direction: column;
+
+.mustDo-list ul,
+.realized-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mustDo-list li a,
+.mustDo-list li p,
+.realized-list li a,
+.realized-list li p {
+  display: inline;
+  margin: 0;
+  font-size: 12px;
+}
+
+.mustDo-list li,
+.realized-list li {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  font-size: 10px;
 }
 
 #button {
   border-radius: 5%;
   background-color: #787e7a;
-  color: #d9d9d9;
+  color: #fff;
   font-weight: bold;
   margin-top: 10px;
   border: none;
@@ -569,6 +595,7 @@ thead img {
 .map {
   height: 500px;
   margin: 10px;
+  border: 1px solid #000;
 }
 
 .feedback {
@@ -604,7 +631,7 @@ h4 {
   font-weight: bold;
   padding-top: 20px;
   font-size: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 #user {
@@ -628,12 +655,12 @@ h4 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding: 10px;
 }
 
 .gallery img {
-  margin: 10px;
-  padding-bottom: 25px;
+  margin-bottom: 20px;
+  border: 2px solid #65a78e;
 }
 
 .delete {
@@ -642,13 +669,14 @@ h4 {
 }
 .add,
 .back {
-  margin-left: 10px;
-  margin-bottom: 20px;
-  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px;
 }
-.add a,
-.back a {
-  margin-right: 15px;
+
+.add .btn {
+  font-size: 12px;
 }
 
 .admin {
@@ -659,11 +687,6 @@ h4 {
   justify-content: center;
 }
 
-.selection {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
 .admin .btn {
   margin: 10px 0;
   display: flex;
@@ -679,24 +702,29 @@ h4 {
   padding-top: 20px;
 }
 
+.profil {
+  margin: 20px;
+}
+
+.profil h3 {
+  padding: 0px;
+}
+
 .profil p {
-  font-family: "Luthier reg";
-  font-size: 14px;
-  padding: 10px 20px 20px 20px;
+  font-family: "Luthier";
+  font-size: 12px;
 }
 
 .profil a {
   text-decoration: none;
-  color: #d9d9d9;
+  color: #65a78e;
   font-size: 14px;
-  padding: 10px 20px 20px 20px;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 main {
   flex: 1;
@@ -705,6 +733,8 @@ main {
 .desinscription {
   display: block;
   padding-top: 40px;
+  padding: 5px;
+  text-align: center;
 }
 
 .unsubscribe {
@@ -727,120 +757,178 @@ main {
   margin-bottom: 30px;
 }
 
-.unsubscribe a:hover,
-.unsubscribe button:hover {
-  background-color:#ffc107;
+.unsubscribe button,
+.submit a {
+  border: 1px solid #65a78e;
 }
 
+.unsubscribe a:hover,
+.unsubscribe button:hover {
+  background-color: #ffc107;
+}
 
-@media only screen and (min-width: 530px) {
-    nav a {
-      font-size: 20px;
-    }
+.cgu {
+  display: block;
+  margin: 15px;
+  text-align: justify;
+}
 
-    .action img {
-      margin :0;
-    }
+.cgu a {
+  color: #65a78e;
+  font-weight: bold;
+}
 
-    .department h1 {
-      font-size: 28px;
-    }
+.cgu a:hover {
+  color: #787e7a;
+  font-weight: 900;
+}
 
-    .description h2 {
-      font-size: 24px;
-    }
+@media only screen and (min-width: 560px) {
+  nav a {
+    font-size: 20px;
+  }
 
-    .description h3 {
-      font-size: 22px;
-    }
+  .action img {
+    margin: 0;
+  }
 
-    .description p {
-      font-size: 16px;
-    }
+  .department h1 {
+    font-size: 28px;
+  }
 
-    td {
-      font-size: 14px;
-    }
+  .description h2 {
+    font-size: 24px;
+  }
 
-    .feedback {
-      font-size: 16px;
-    }
+  .description h3 {
+    font-size: 22px;
+  }
 
-    #user {
-      font-size: 14px;
-    }
+  .description p {
+    font-size: 16px;
+  }
 
-    .display p {
-      font-size: 16px;
-    }
+  td {
+    font-size: 14px;
+  }
 
-    .profil p {
-      font-family: "Luthier";
-      font-size: 20px;
-      margin-top: 20px;
-      padding: 5px 20px;
-    }
+  .feedback {
+    font-size: 16px;
+  }
 
-    .profil a {
-      font-size: 16px;
-    }
+  #user {
+    font-size: 14px;
+  }
 
-    .form-group,
-    .form-control {
-      font-size: 18px;
-    }
+  .display p {
+    font-size: 16px;
+  }
 
-    .desinscription p {
-      font-size: 18px;
-    }
- }
+  .profil p {
+    font-family: "Luthier";
+    font-size: 20px;
+  }
 
-@media only screen and (min-width: 960px) {
+  .profil a {
+    font-size: 16px;
+  }
+
+  .form-group,
+  .form-control {
+    font-size: 18px;
+  }
+
+  .desinscription p {
+    font-size: 18px;
+  }
+
+  .row.row-cols-sm-4 > * {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
   nav ul {
+    display: flex;
     flex-flow: row nowrap;
   }
 
-  nav a {
-    font-size: 23px;
-    margin-right: 10px;
+  nav li {
+    display: flex;
   }
 
-  nav a:hover {
-    padding: 5px;
+  nav a {
+    display: flex;
+    align-items: baseline;
+    font-size: 20px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  nav a {
+    font-size: 26px;
   }
 
   h1 {
     font-size: 45px;
+    padding-top: 20px;
   }
 
-  article p,
-  .calltoaction,
-  aside a {
-    font-size: 20px;
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  p {
-    margin-bottom: 12px;
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 20px;
   }
 
-  .action {
-    position: relative;
+  article p {
+    font-size: 30px;
+    padding-bottom: 40px;
   }
 
   .action img {
-    padding-bottom:10px ;
+    width: 700px;
+  }
+
+  .action {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .calltoaction,
+  aside a {
+    font-size: 26px;
   }
 
   #arrow {
     width: 80px;
-  }
-
-    .calltoaction {
-    top: -55px;
-    padding-top: 7px;
-    margin-bottom: 10px;
-    position: absolute;
-    color: black;
   }
 
   .subscribe button {
@@ -851,11 +939,12 @@ main {
     font-size: 25px;
   }
 
-  aside {
+  aside p {
     font-size: 18px;
   }
 
-  footer {
+  footer a,
+  footer p {
     font-size: 20px;
   }
 
@@ -879,25 +968,12 @@ main {
     font-size: 30px;
   }
 
-  .col {
-    display: flex;
-    justify-content: center;
+  .row.row-cols-sm-4 > * {
+    flex: 0 0 auto;
+    width: 33%;
   }
   .card {
-    width: 400px;
     height: 600px;
-    /* padding-top: 10px; */
-  }
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  .card-img-top {
-    width: 330px;
-    height: 270px;
-    margin: auto;
   }
 
   .walk h2 {
@@ -927,42 +1003,50 @@ main {
     width: 350px;
     height: 350px;
   }
-}
 
-tbody,
-td,
-tfoot,
-thead,
-tr {
-  font-size: 14px;
-}
+  tbody,
+  td,
+  tfoot,
+  thead,
+  tr {
+    font-size: 14px;
+  }
 
-.profil a {
-  font-size: 18px;
-}
+  .profil a {
+    font-size: 18px;
+  }
 
-.cgu {
-  display: block;
-  margin: 15px;
-  padding: 30px;
-}
+  .info-container,
+  .mustDo-list,
+  .realized-list {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
-.cgu a {
-  color:#65a78e;
-  font-weight: bold;
-}
+  .info-container p {
+    padding-right: 15px;
+  }
 
-.cgu a:hover {
-  color:#787e7a;
-  font-weight:900;
-}
+  .desinscription p {
+    font-size: 20px;
+  }
 
-.desinscription p {
-  font-size: 20px;
-}
+  .btn {
+    font-size: 24px;
+  }
 
-.btn {
-  font-size: 24px;
+  .mustDo-list li a,
+  .mustDo-list li p,
+  .realized-list li a,
+  .realized-list li p {
+    font-size: 14px;
+  }
+
+  .mustDo-list li,
+  .realized-list li {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -970,60 +1054,10 @@ tr {
     width: auto;
   }
 
-  #logo img {
-    height: 360px;
-  }
-
   nav a {
     font-size: 35px;
     padding: 10px;
   }
-
-  .down > a::after {
-    content: "▼";
-    font-size: 30px;
-    padding-top: 5px;
-  }
-
-  section {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    border: solid 1px black;
-    margin: 10px;
-    font-size: 25px;
-  }
-
-  article p {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .action img {
-    width: 500px;
-  }
-
-  .action {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .calltoaction {
-    font-size: 25px;
-    position: relative;
-    padding: 10px;
-  }
-
-  .subscribe button {
-    margin-left: 83px;
-  } 
 
   #download {
     color: #65a78e;
@@ -1059,6 +1093,18 @@ tr {
     position: relative;
   }
 
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card {
+    height: 700px;
+  }
+
+  .card-img-top {
+    height: 300px;
+  }
+
   .map {
     height: 500px;
     margin: 10px;
@@ -1066,7 +1112,6 @@ tr {
 
   .department h1 {
     font-size: 44px;
-    color: #d9d9d9;
   }
 
   .walk h2 {
@@ -1100,7 +1145,6 @@ tr {
     font-size: 22px;
     font-weight: bold;
     padding-top: 20px;
-    margin-left: 30px;
   }
 
   #user {
@@ -1120,5 +1164,17 @@ tr {
 
   .desinscription p {
     font-size: 24px;
+  }
+
+  .mustDo-list li a,
+  .mustDo-list li p,
+  .realized-list li a,
+  .realized-list li p {
+    font-size: 18px;
+  }
+
+  .mustDo-list li,
+  .realized-list li {
+    font-size: 18px;
   }
 }

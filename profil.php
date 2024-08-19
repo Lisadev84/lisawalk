@@ -44,16 +44,31 @@ include "includes/header.php";
     </div>
 
     <h4>Mes randonnées à faire</h4>
-    <div class="mustDo-list">
-        <ul>
-            <?php foreach ($mustDoWalks as $walk) : ?>
-                <li>
-                    <a href="walkTemplate.php?id_w=<?= $walk->id_w ?>"><?= htmlspecialchars($walk->entitled) ?></a>
-                    <span>(Ajoutée le <?= date('d/m/Y', strtotime($walk->created_at)) ?>)</span>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
+<div class="mustDo-list">
+    <ul>
+        <?php 
+            $departmentMap = [
+                1 => 'vaucluse.php',
+                2 => 'gard.php',
+                3 => 'drome.php',
+                4 => 'bouches-du-rhone.php',
+                5 => 'ailleurs-en-france.php'
+            ];
+
+            foreach ($mustDoWalks as $walk) :
+                
+                if (isset($departmentMap[$walk->department])) {
+                    $departmentFile = $departmentMap[$walk->department];
+                } 
+        ?>       
+            <li>
+                <a href="<?= $departmentFile ?>?id_w=<?= $walk->id_w ?>"><?= htmlspecialchars($walk->entitled) ?></a>
+                <span>(Ajoutée le <?= date('d/m/Y', strtotime($walk->created_at)) ?>)</span>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
 
     <h4>Mes randonnées réalisées</h4>
     <div class="realized-list">
