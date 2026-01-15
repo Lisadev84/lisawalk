@@ -25,18 +25,11 @@ Lisawalk
 - **Framework** : Bootstrap5
 - **Bibliothèque** : Leaflet for mapping
 - **Base de données relationnelle** : Mysql
-- **Hébergement** : O2Switch
-- **FTP** : Filezilla
-
 
 ## Usage
 1. Access the application via your web browser
 2. Register or log in to access the 'user' functions.
 3. Explore walks, download GPX tracks and manage your user profile.
-
- 
-## Deployment
-The site is currently online on O2Switch at the following address : www.lisawalk.fr
 
 ## Authors
 - [@Lisadev84](https://github.com/Lisadev84), solo project as part of DWWM certification for professional retraining
